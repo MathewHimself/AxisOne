@@ -1,0 +1,20 @@
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.top-panel,
+.hero__center {
+  animation: fade-up 520ms ease both;
+}
+
+.hero__center {
+  animation-delay: 120ms;
+}
