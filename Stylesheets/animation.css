@@ -11,10 +11,12 @@
 }
 
 .top-panel,
-.hero__center {
+.hero__center,
+.roadmap-content {
   animation: fade-up 520ms ease both;
 }
 
-.hero__center {
+.hero__center,
+.roadmap-content {
   animation-delay: 120ms;
 }
