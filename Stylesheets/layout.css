@@ -444,7 +444,7 @@ button {
 
 .ecosystem-section {
   width: 100%;
-  min-height: 942px;
+  min-height: 542px;
   padding: 80px 81px 79px;
   display: flex;
   flex-direction: column;
@@ -643,4 +643,84 @@ button {
 
 .ecosystem-list__item--active::before {
   background: #ff04a7;
+}
+.email-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  gap: 24px;
+  padding-right: 81px;
+  padding-left: 81px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.email-section .roadmap-head__title {
+  max-width: 1040px;
+  text-align: center;
+}
+
+.email-section p {
+  color: #b9b9b9;
+}
+
+.email-buttons {
+  position: relative;
+  width: min(100%, 656px);
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+}
+.email-button {
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 31px 20px;
+  align-items: center;
+  border-radius: 30px;
+  background: #131313;
+}
+
+.email-input {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+}
+
+.email-input::placeholder {
+  color: #b9b9b9;
+  opacity: 1;
+}
+
+.try-buton {
+  display: flex;
+  flex: 0 0 auto;
+  padding: 30px 20px;
+  border: 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  background: linear-gradient(244deg, #fa003f 35.35%, #ff04c4 107.56%);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    filter 180ms ease;
+}
+
+.try-buton:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.try-buton:active {
+  transform: translateY(1px);
 }

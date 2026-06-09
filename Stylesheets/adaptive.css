@@ -175,6 +175,29 @@
     height: 7px;
     flex-basis: 7px;
   }
+
+  .email-section {
+    padding: 84px 48px 72px;
+    gap: 22px;
+  }
+
+  .email-section .roadmap-head__title {
+    max-width: 650px;
+    font-size: 42px;
+    letter-spacing: -0.84px;
+  }
+
+  .email-buttons {
+    width: min(100%, 620px);
+    gap: 14px;
+  }
+
+  .email-button,
+  .try-buton {
+    min-height: 66px;
+    padding: 22px 20px;
+    border-radius: 24px;
+  }
 }
 
 @media (min-width: 901px) and (max-width: 1280px) {
@@ -276,6 +299,21 @@
 
   .ecosystem-list__item {
     font-size: 16px;
+  }
+
+  .email-section {
+    padding-right: 48px;
+    padding-left: 48px;
+  }
+
+  .email-section .roadmap-head__title {
+    max-width: 860px;
+    font-size: 52px;
+    letter-spacing: -1.04px;
+  }
+
+  .email-buttons {
+    width: min(100%, 620px);
   }
 }
 
@@ -752,6 +790,33 @@
   .ecosystem-list {
     display: none;
   }
+
+  .email-section {
+    padding: 72px 18px 64px;
+    gap: 18px;
+  }
+
+  .email-section .roadmap-head__title {
+    max-width: 520px;
+    font-size: 34px;
+    letter-spacing: -0.68px;
+  }
+
+  .email-buttons {
+    width: min(100%, 496px);
+    gap: 10px;
+  }
+
+  .email-button,
+  .try-buton {
+    min-height: 58px;
+    padding: 18px 18px;
+    border-radius: 20px;
+  }
+
+  .try-buton {
+    flex-basis: 144px;
+  }
 }
 
 @media (max-width: 400px) {
@@ -923,5 +988,47 @@
 
   .ecosystem-list {
     display: none;
+  }
+
+  .email-section {
+    padding: 7px 10px;
+    gap: 12.669px;
+  }
+
+  .email-section .roadmap-head__title {
+    width: 298px;
+    max-width: 100%;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.42px;
+  }
+
+  .email-buttons {
+    width: min(100%, 254px);
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4.575px;
+  }
+
+  .email-button {
+    flex: 0 1 183px;
+    width: 183px;
+    min-height: 31px;
+    padding: 10.909px 7.038px;
+    border-radius: 10.558px;
+    font-size: 9px;
+    line-height: 1;
+  }
+
+  .try-buton {
+    flex: 0 0 auto;
+    min-height: 31px;
+    padding: 10.558px 7.038px;
+    border-radius: 10.558px;
+    font-size: 9px;
+    line-height: 1;
   }
 }
