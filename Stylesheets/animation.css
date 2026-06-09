@@ -12,11 +12,31 @@
 
 .top-panel,
 .hero__center,
-.roadmap-content {
+.roadmap-content,
+.ecosystem-head,
+.ecosystem-map,
+.email-section .roadmap-head__title,
+.email-buttons {
   animation: fade-up 520ms ease both;
 }
 
 .hero__center,
 .roadmap-content {
   animation-delay: 120ms;
+}
+
+.ecosystem-head {
+  animation-delay: 180ms;
+}
+
+.ecosystem-map {
+  animation-delay: 300ms;
+}
+
+.email-section .roadmap-head__title {
+  animation-delay: 360ms;
+}
+
+.email-buttons {
+  animation-delay: 480ms;
 }
