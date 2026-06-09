@@ -445,11 +445,11 @@ button {
 .ecosystem-section {
   width: 100%;
   min-height: 942px;
-  padding: 120px 81px 79px;
+  padding: 80px 81px 79px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 75px;
+  gap: 50px;
   background: #090909;
 }
 
@@ -541,7 +541,7 @@ button {
 }
 
 .ecosystem-apps {
-  position: relative;
+  position: absolute;
   top: 239px;
   left: 0;
   width: 100%;
@@ -549,7 +549,7 @@ button {
 }
 
 .ecosystem-app {
-  position: relative;
+  position: absolute;
   top: 3px;
   width: 285px;
   display: flex;
