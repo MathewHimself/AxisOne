@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 388.196 382.533" fill="none" xmlns="http://www.w3.org/2000/svg">
+<foreignObject x="-14" y="-14" width="416.196" height="410.533"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(7px);clip-path:url(#bgblur_0_0_29_clip_path);height:100%;width:100%"></div></foreignObject><g id="logo" data-figma-bg-blur-radius="14">
+<rect x="1" y="1" width="386.196" height="380.533" rx="91" fill="url(#paint0_linear_0_29)" fill-opacity="0.86"/>
+<rect x="1" y="1" width="386.196" height="380.533" rx="91" stroke="var(--stroke-0, white)" stroke-width="2"/>
+<path id="icon" d="M158.24 281.607C156.03 285.284 152.053 287.533 147.763 287.533H129.403C119.729 287.533 113.888 276.828 119.124 268.693L165.894 196.014C168.474 192.005 168.488 186.862 165.929 182.839L122.01 113.785C116.834 105.646 122.68 95 132.325 95H151.906C156.332 95 160.411 97.3916 162.573 101.253L183.571 138.762C188.208 147.046 200.106 147.113 204.836 138.882L226.531 101.133C228.712 97.3391 232.754 95 237.13 95H255.003C264.69 95 270.528 105.729 265.268 113.863L221.675 181.266C219.074 185.288 219.062 190.46 221.644 194.495L269.153 268.718C274.361 276.855 268.518 287.533 258.858 287.533H238.499C234.103 287.533 230.046 285.172 227.872 281.351L204.431 240.131C199.809 232.004 188.146 231.863 183.328 239.876L158.24 281.607Z" fill="var(--fill-0, white)"/>
+</g>
+<defs>
+<clipPath id="bgblur_0_0_29_clip_path" transform="translate(14 14)"><rect x="1" y="1" width="386.196" height="380.533" rx="91"/>
+</clipPath><linearGradient id="paint0_linear_0_29" x1="388.196" y1="65.1119" x2="-65.1145" y2="120.94" gradientUnits="userSpaceOnUse">
+<stop offset="0.316935" stop-color="#FA003F"/>
+<stop offset="1" stop-color="#FF04C4"/>
+</linearGradient>
+</defs>
+</svg>

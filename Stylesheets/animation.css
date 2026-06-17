@@ -10,6 +10,22 @@
   }
 }
 
+@keyframes hero-fly-up {
+  from {
+    opacity: 0;
+    transform: translateY(var(--hero-fly-distance, 90px)) scale(var(--hero-fly-scale, 0.92));
+  }
+
+  68% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 .top-panel,
 .hero__center,
 .roadmap-content,
@@ -39,4 +55,123 @@
 
 .email-buttons {
   animation-delay: 480ms;
+}
+
+.pricing-head,
+.pricing-card,
+.pricing-note,
+.company-cases__head,
+.company-logo-card,
+.company-cases__button {
+  animation: fade-up 520ms ease both;
+}
+
+.pricing-head {
+  animation-delay: 120ms;
+}
+
+.pricing-card:nth-child(1) {
+  animation-delay: 220ms;
+}
+
+.pricing-card:nth-child(2) {
+  animation-delay: 320ms;
+}
+
+.pricing-card:nth-child(3) {
+  animation-delay: 420ms;
+}
+
+.pricing-note {
+  animation-delay: 520ms;
+}
+
+.company-cases__head {
+  animation-delay: 120ms;
+}
+
+.company-logo-card:nth-child(1),
+.company-logo-card:nth-child(6) {
+  animation-delay: 180ms;
+}
+
+.company-logo-card:nth-child(2),
+.company-logo-card:nth-child(7) {
+  animation-delay: 240ms;
+}
+
+.company-logo-card:nth-child(3),
+.company-logo-card:nth-child(8) {
+  animation-delay: 300ms;
+}
+
+.company-logo-card:nth-child(4),
+.company-logo-card:nth-child(9) {
+  animation-delay: 360ms;
+}
+
+.company-logo-card:nth-child(5),
+.company-logo-card:nth-child(10) {
+  animation-delay: 420ms;
+}
+
+.company-cases__button {
+  animation-delay: 520ms;
+}
+
+.main-page .hero__brand-image,
+.main-page .hero-sticker {
+  animation-name: hero-fly-up;
+  animation-timing-function: cubic-bezier(0.17, 0.84, 0.3, 1);
+  animation-fill-mode: both;
+  will-change: transform, opacity;
+}
+
+.main-page .hero__brand-image {
+  --hero-fly-distance: 120px;
+  --hero-fly-scale: 0.88;
+  animation-duration: 980ms;
+  animation-delay: 80ms;
+}
+
+.main-page .hero-sticker--money {
+  --hero-fly-distance: 76px;
+  --hero-fly-scale: 0.9;
+  animation-duration: 740ms;
+  animation-delay: 180ms;
+}
+
+.main-page .hero-sticker--star {
+  --hero-fly-distance: 118px;
+  --hero-fly-scale: 0.72;
+  animation-duration: 1040ms;
+  animation-delay: 40ms;
+}
+
+.main-page .hero-sticker--idea {
+  --hero-fly-distance: 58px;
+  --hero-fly-scale: 0.94;
+  animation-duration: 620ms;
+  animation-delay: 360ms;
+}
+
+.main-page .hero-sticker--glow {
+  --hero-fly-distance: 92px;
+  --hero-fly-scale: 0.9;
+  animation-duration: 820ms;
+  animation-delay: 230ms;
+}
+
+.main-page .hero-sticker--cloud {
+  --hero-fly-distance: 132px;
+  --hero-fly-scale: 0.86;
+  animation-duration: 1160ms;
+  animation-delay: 120ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main-page .hero__brand-image,
+  .main-page .hero-sticker {
+    animation: none;
+  }
 }
