@@ -39,3 +39,33 @@ if (emailForm && emailInput && emailButton) {
     }, 1800);
   });
 }
+
+const ceoThinking = document.querySelector('.ceo-thinking');
+
+if (ceoThinking) {
+  const revealCeoThinking = () => {
+    ceoThinking.classList.add('is-visible');
+  };
+
+  if ('IntersectionObserver' in window) {
+    const ceoObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            revealCeoThinking();
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '0px 0px -12% 0px',
+        threshold: 0.25,
+      }
+    );
+
+    ceoObserver.observe(ceoThinking);
+  } else {
+    revealCeoThinking();
+  }
+}

@@ -62,7 +62,12 @@
 .pricing-note,
 .company-cases__head,
 .company-logo-card,
-.company-cases__button {
+.company-cases__button,
+.business-personalize__title,
+.business-phone,
+.business-personalize__aside,
+.ceo-thinking__head,
+.ceo-thinking__button {
   animation: fade-up 520ms ease both;
 }
 
@@ -119,6 +124,26 @@
   animation-delay: 520ms;
 }
 
+.business-personalize__title {
+  animation-delay: 120ms;
+}
+
+.business-phone {
+  animation-delay: 240ms;
+}
+
+.business-personalize__aside {
+  animation-delay: 360ms;
+}
+
+.ceo-thinking__head {
+  animation-delay: 120ms;
+}
+
+.ceo-thinking__button {
+  animation-delay: 560ms;
+}
+
 .main-page .hero__brand-image,
 .main-page .hero-sticker {
   animation-name: hero-fly-up;
@@ -169,9 +194,60 @@
   animation-delay: 120ms;
 }
 
+.ceo-phone,
+.ceo-widget {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.ceo-thinking.is-visible .ceo-phone,
+.ceo-thinking.is-visible .ceo-widget {
+  animation-name: hero-fly-up;
+  animation-timing-function: cubic-bezier(0.17, 0.84, 0.3, 1);
+  animation-fill-mode: both;
+}
+
+.ceo-thinking.is-visible .ceo-phone {
+  --hero-fly-distance: 110px;
+  --hero-fly-scale: 0.9;
+  animation-duration: 980ms;
+  animation-delay: 120ms;
+}
+
+.ceo-thinking.is-visible .ceo-widget--requests {
+  --hero-fly-distance: 72px;
+  --hero-fly-scale: 0.9;
+  animation-duration: 720ms;
+  animation-delay: 260ms;
+}
+
+.ceo-thinking.is-visible .ceo-widget--advice {
+  --hero-fly-distance: 92px;
+  --hero-fly-scale: 0.88;
+  animation-duration: 880ms;
+  animation-delay: 340ms;
+}
+
+.ceo-thinking.is-visible .ceo-widget--person {
+  --hero-fly-distance: 64px;
+  --hero-fly-scale: 0.92;
+  animation-duration: 760ms;
+  animation-delay: 420ms;
+}
+
+.ceo-thinking.is-visible .ceo-widget--streak {
+  --hero-fly-distance: 118px;
+  --hero-fly-scale: 0.86;
+  animation-duration: 1080ms;
+  animation-delay: 500ms;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .main-page .hero__brand-image,
-  .main-page .hero-sticker {
+  .main-page .hero-sticker,
+  .ceo-phone,
+  .ceo-widget {
     animation: none;
+    opacity: 1;
   }
 }
