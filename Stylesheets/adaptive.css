@@ -2641,3 +2641,581 @@
     border-radius: 35px;
   }
 }
+
+@media (max-width: 1600px) {
+  .scenario-picker {
+    padding: 42px 48px 76px;
+  }
+
+  .scenario-picker__content {
+    width: min(100%, 1240px);
+    gap: 46px;
+  }
+
+  .scenario-picker__head h2 {
+    font-size: 52px;
+    letter-spacing: -1.04px;
+    word-spacing: 16px;
+  }
+
+  .scenario-picker__head p {
+    font-size: 22px;
+  }
+
+  .scenario-picker__body {
+    grid-template-columns: minmax(0, 650px) minmax(0, 520px);
+    gap: 54px;
+  }
+
+  .scenario-tab {
+    min-height: 58px;
+    padding: 13px 21px 15px;
+    border-radius: 24px;
+    font-size: 30px;
+  }
+
+  .scenario-dialog {
+    gap: 38px;
+  }
+
+  .scenario-dialog__bubble--user,
+  .scenario-dialog__bubble--axis {
+    max-width: 456px;
+    padding: 14px 24px 17px;
+    border-radius: 24px;
+  }
+
+  .scenario-dialog__name,
+  .scenario-dialog__brand {
+    font-size: 22px;
+  }
+
+  .scenario-dialog__bubble p {
+    font-size: 24px;
+  }
+
+  .game-growth {
+    padding: 72px 48px 92px;
+  }
+
+  .game-growth__content {
+    width: min(100%, 1240px);
+    gap: 58px;
+  }
+
+  .game-growth__head h2 {
+    font-size: 52px;
+    letter-spacing: -1.04px;
+  }
+
+  .game-growth__head p {
+    font-size: 22px;
+  }
+
+  .game-growth__body {
+    gap: 80px;
+  }
+
+  .game-growth__icons {
+    width: 520px;
+  }
+
+  .game-icon {
+    width: 124px;
+    height: 124px;
+    border-radius: 30px;
+  }
+
+  .game-icon img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .game-growth__stats {
+    width: 520px;
+    gap: 22px;
+  }
+
+  .game-stat__icon {
+    width: 72px;
+    height: 72px;
+    flex-basis: 72px;
+    border-radius: 18px;
+  }
+
+  .game-stat__icon img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .game-stat:nth-child(2) .game-stat__icon img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .game-stat__top,
+  .game-stat p {
+    font-size: 20px;
+  }
+
+  .game-stat__track {
+    height: 13px;
+  }
+
+  .game-growth__levels {
+    gap: 18px;
+  }
+
+  .game-level {
+    width: 250px;
+    min-height: 64px;
+    padding: 8px 18px 12px;
+    border-radius: 29px;
+    font-size: 34px;
+  }
+
+  .main-footer {
+    padding: 32px 48px;
+  }
+
+  .main-footer__inner {
+    padding: 68px 82px;
+    gap: 150px;
+  }
+
+  .main-footer__column {
+    gap: 58px;
+  }
+
+  .main-footer__column--credits {
+    width: 390px;
+    flex-basis: 390px;
+  }
+
+  .main-footer__column--about {
+    width: 540px;
+    flex-basis: 540px;
+  }
+
+  .main-footer__text {
+    font-size: 24px;
+  }
+
+  .main-footer__small {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .scenario-picker {
+    padding-top: 38px;
+    padding-bottom: 64px;
+  }
+
+  .scenario-picker__content {
+    width: min(100%, 920px);
+    gap: 36px;
+  }
+
+  .scenario-picker__body {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .scenario-picker__tabs {
+    max-width: 650px;
+    justify-self: center;
+  }
+
+  .scenario-picker__tab-row {
+    justify-content: center;
+  }
+
+  .scenario-dialog {
+    width: min(100%, 660px);
+    justify-self: center;
+  }
+
+  .game-growth {
+    padding-top: 64px;
+  }
+
+  .game-growth__body {
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .game-growth__levels {
+    flex-wrap: wrap;
+  }
+
+  .main-footer__inner {
+    align-items: flex-start;
+    gap: 72px;
+  }
+
+  .main-footer__column--credits,
+  .main-footer__column--about {
+    width: min(100%, 440px);
+    flex: 1 1 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .scenario-picker {
+    padding: 34px 24px 56px;
+  }
+
+  .scenario-picker__content {
+    gap: 30px;
+  }
+
+  .scenario-picker__head h2 {
+    font-size: 42px;
+    letter-spacing: -0.84px;
+    word-spacing: 8px;
+  }
+
+  .scenario-picker__head p {
+    font-size: 19px;
+  }
+
+  .scenario-picker__tabs {
+    gap: 10px;
+  }
+
+  .scenario-picker__tab-row {
+    gap: 10px;
+  }
+
+  .scenario-picker__body {
+    gap: 42px;
+  }
+
+  .scenario-tab {
+    min-height: 46px;
+    padding: 11px 16px 12px;
+    border-radius: 20px;
+    font-size: 22px;
+  }
+
+  .scenario-dialog {
+    width: min(100%, 420px);
+    gap: 24px;
+  }
+
+  .scenario-dialog__bubble--user,
+  .scenario-dialog__bubble--axis {
+    max-width: 420px;
+    padding: 13px 18px 15px;
+    border-radius: 20px;
+  }
+
+  .scenario-dialog__name,
+  .scenario-dialog__brand {
+    font-size: 19px;
+  }
+
+  .scenario-dialog__bubble p {
+    font-size: 21px;
+  }
+
+  .game-growth {
+    padding: 54px 24px 70px;
+  }
+
+  .game-growth__content {
+    gap: 42px;
+  }
+
+  .game-growth__head h2 {
+    font-size: 42px;
+    letter-spacing: -0.84px;
+  }
+
+  .game-growth__head p {
+    font-size: 19px;
+  }
+
+  .game-growth__icons {
+    width: min(100%, 392px);
+  }
+
+  .game-icon {
+    width: 92px;
+    height: 92px;
+    border-radius: 22px;
+  }
+
+  .game-icon img {
+    width: 21px;
+    height: 21px;
+  }
+
+  .game-growth__stats {
+    width: min(100%, 520px);
+    gap: 18px;
+  }
+
+  .game-stat__icon {
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
+    border-radius: 15px;
+  }
+
+  .game-stat__icon img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .game-stat:nth-child(2) .game-stat__icon img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .game-stat__top,
+  .game-stat p {
+    font-size: 17px;
+  }
+
+  .game-stat__track {
+    height: 10px;
+  }
+
+  .game-level {
+    width: 190px;
+    min-height: 54px;
+    padding: 7px 15px 10px;
+    border-radius: 24px;
+    font-size: 26px;
+  }
+
+  .main-footer {
+    padding: 28px 24px;
+  }
+
+  .main-footer__inner {
+    padding: 48px 38px;
+    flex-direction: column;
+    gap: 46px;
+  }
+
+  .main-footer__column {
+    width: 100%;
+    flex-basis: auto;
+    gap: 30px;
+  }
+
+  .main-footer__text {
+    gap: 10px;
+    font-size: 20px;
+    line-height: 1.08;
+  }
+
+  .main-footer__small {
+    font-size: 18px;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 520px) {
+  .scenario-picker {
+    padding: 28px 14px 46px;
+  }
+
+  .scenario-picker__content {
+    gap: 24px;
+  }
+
+  .scenario-picker__head h2 {
+    max-width: 330px;
+    font-size: 28px;
+    letter-spacing: -0.56px;
+    word-spacing: 0;
+  }
+
+  .scenario-picker__head p {
+    max-width: 310px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .scenario-picker__tabs {
+    width: min(100%, 340px);
+    gap: 8px;
+  }
+
+  .scenario-picker__tab-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .scenario-picker__body {
+    gap: 30px;
+  }
+
+  .scenario-tab {
+    min-height: 36px;
+    padding: 9px 12px 10px;
+    border-radius: 16px;
+    font-size: 16px;
+  }
+
+  .scenario-dialog {
+    width: min(100%, 260px);
+    gap: 16px;
+  }
+
+  .scenario-dialog__bubble--user,
+  .scenario-dialog__bubble--axis {
+    max-width: 100%;
+    padding: 10px 12px 12px;
+    border-radius: 16px;
+  }
+
+  .scenario-dialog__name,
+  .scenario-dialog__brand {
+    font-size: 14px;
+  }
+
+  .scenario-dialog__bubble p {
+    font-size: 14px;
+    line-height: 1.16;
+  }
+
+  .game-growth {
+    padding: 44px 14px 56px;
+  }
+
+  .game-growth__content {
+    gap: 28px;
+  }
+
+  .game-growth__head h2 {
+    max-width: 330px;
+    font-size: 28px;
+    letter-spacing: -0.56px;
+  }
+
+  .game-growth__head p {
+    font-size: 14px;
+  }
+
+  .game-growth__body {
+    gap: 28px;
+  }
+
+  .game-growth__icons {
+    width: min(100%, 292px);
+    gap: 6px;
+  }
+
+  .game-growth__icon-row {
+    gap: 6px;
+  }
+
+  .game-icon {
+    width: 68px;
+    height: 68px;
+    border-radius: 16px;
+  }
+
+  .game-icon img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .game-growth__stats {
+    width: min(100%, 320px);
+    gap: 14px;
+  }
+
+  .game-stat {
+    gap: 8px;
+  }
+
+  .game-stat__icon {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+    border-radius: 12px;
+  }
+
+  .game-stat__icon img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .game-stat:nth-child(2) .game-stat__icon img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .game-stat__top {
+    margin-bottom: 6px;
+    gap: 10px;
+    font-size: 13px;
+  }
+
+  .game-stat__track {
+    height: 8px;
+  }
+
+  .game-stat p {
+    margin-top: 6px;
+    font-size: 12px;
+  }
+
+  .game-growth__levels {
+    gap: 9px;
+  }
+
+  .game-level {
+    width: auto;
+    min-width: 95px;
+    min-height: 38px;
+    padding: 7px 12px 9px;
+    border-radius: 17px;
+    font-size: 16px;
+  }
+
+  .main-footer {
+    padding: 20px 15px;
+  }
+
+  .main-footer__inner {
+    padding: 34px 18px;
+    align-items: center;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .main-footer__column {
+    width: 100%;
+    align-items: center;
+    gap: 22px;
+  }
+
+  .main-footer__text {
+    width: 100%;
+    align-items: center;
+    font-size: 13px;
+    line-height: 1.15;
+  }
+
+  .main-footer__text p {
+    max-width: 260px;
+    white-space: normal;
+  }
+
+  .main-footer__small {
+    max-width: 260px;
+    font-size: 12px;
+    line-height: 1.2;
+    text-align: center;
+    white-space: normal;
+  }
+}

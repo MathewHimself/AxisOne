@@ -67,7 +67,15 @@
 .business-phone,
 .business-personalize__aside,
 .ceo-thinking__head,
-.ceo-thinking__button {
+.ceo-thinking__button,
+.scenario-picker__head,
+.scenario-picker__tabs,
+.scenario-dialog__bubble,
+.game-growth__head,
+.game-growth__icons,
+.game-growth__stats,
+.game-growth__levels,
+.main-footer__panel {
   animation: fade-up 520ms ease both;
 }
 
@@ -142,6 +150,42 @@
 
 .ceo-thinking__button {
   animation-delay: 560ms;
+}
+
+.scenario-picker__head {
+  animation-delay: 120ms;
+}
+
+.scenario-picker__tabs {
+  animation-delay: 220ms;
+}
+
+.scenario-dialog__bubble--user {
+  animation-delay: 320ms;
+}
+
+.scenario-dialog__bubble--axis {
+  animation-delay: 420ms;
+}
+
+.game-growth__head {
+  animation-delay: 120ms;
+}
+
+.game-growth__icons {
+  animation-delay: 220ms;
+}
+
+.game-growth__stats {
+  animation-delay: 320ms;
+}
+
+.game-growth__levels {
+  animation-delay: 420ms;
+}
+
+.main-footer__panel {
+  animation-delay: 120ms;
 }
 
 .main-page .hero__brand-image,
