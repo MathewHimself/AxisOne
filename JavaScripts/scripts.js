@@ -196,3 +196,28 @@ if (gameLevelButtons.length && gameIcons.length && gameStats.length) {
 
   setGameLevel(0);
 }
+
+const productFeatures = document.querySelectorAll('[data-product-feature]');
+
+if (productFeatures.length) {
+  const updateProductProgress = () => {
+    productFeatures.forEach((feature) => {
+      const rect = feature.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const start = viewportHeight * 0.98;
+      const end = viewportHeight * 0.08;
+      const rawProgress = (start - rect.top) / (start - end);
+      const progress = Math.min(1, Math.max(0, rawProgress));
+
+      feature.style.setProperty('--product-progress', progress.toFixed(3));
+
+      if (progress > 0.22) {
+        feature.classList.add('is-visible');
+      }
+    });
+  };
+
+  updateProductProgress();
+  window.addEventListener('scroll', updateProductProgress, { passive: true });
+  window.addEventListener('resize', updateProductProgress);
+}

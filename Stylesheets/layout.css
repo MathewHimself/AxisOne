@@ -36,6 +36,181 @@ button {
   background: #000;
 }
 
+.product-page {
+  min-height: 100vh;
+  background: #080808;
+}
+
+.product-story {
+  width: 100%;
+  min-height: 100vh;
+  padding: 39px 81px 148px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 150px;
+  overflow: hidden;
+}
+
+.product-story__top {
+  max-width: 1758px;
+}
+
+.product-story__stack {
+  width: min(100%, 1732px);
+  display: flex;
+  flex-direction: column;
+  gap: 184px;
+}
+
+.product-feature {
+  --product-progress: 0;
+  width: 100%;
+  min-height: 874px;
+  display: grid;
+  grid-template-columns: minmax(360px, 594px) 450px minmax(320px, 408px);
+  align-items: center;
+  justify-content: center;
+  gap: clamp(54px, 8.4vw, 162px);
+  position: relative;
+}
+
+.product-feature--widgets {
+  grid-template-columns: minmax(340px, 536px) 450px minmax(320px, 408px);
+  gap: clamp(56px, 8.7vw, 167px);
+}
+
+.product-feature__left {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+.product-feature__title {
+  max-width: 594px;
+  margin: 0;
+  color: #fff;
+  font-family: 'Inter', 'Helvetica', Arial, sans-serif;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -1.2px;
+}
+
+.product-feature__note {
+  max-width: 408px;
+  margin: 0;
+  color: #b9b9b9;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.product-feature__media {
+  width: 450px;
+  min-height: 874px;
+  position: sticky;
+  top: 62px;
+  display: grid;
+  place-items: center;
+  transform: translateY(calc(120px - (var(--product-progress) * 340px)));
+  opacity: calc(0.72 + (var(--product-progress) * 0.28));
+  will-change: transform, opacity;
+}
+
+.product-phone {
+  width: 402px;
+  height: 874px;
+  display: block;
+  object-fit: contain;
+}
+
+.product-widgets {
+  width: 450px;
+  height: 874px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 36px;
+}
+
+.product-widget {
+  display: block;
+  object-fit: contain;
+}
+
+.product-widget--small {
+  width: 218px;
+  height: 218px;
+  align-self: flex-start;
+}
+
+.product-widget--wide {
+  width: 378px;
+  height: 149px;
+}
+
+.product-widget--large {
+  width: 311px;
+  height: 311px;
+  margin-right: 24px;
+}
+
+.product-feature__copy {
+  max-width: 408px;
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+  color: #b9b9b9;
+  opacity: 0;
+  transform: translateY(34px);
+  transition:
+    opacity 560ms ease,
+    transform 560ms ease;
+}
+
+.product-feature__copy p {
+  margin: 0;
+  color: inherit;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.product-feature__button {
+  width: 100%;
+  min-height: 79px;
+  padding: 20px 30px 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  border-radius: 31px;
+  color: #fff;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.product-feature__button:hover,
+.product-feature__button:focus-visible {
+  background: #fff;
+  color: #080808;
+  transform: translateY(-2px);
+}
+
+.product-feature.is-visible .product-feature__copy {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .hero {
   width: 100%;
   min-height: auto;
@@ -2080,7 +2255,7 @@ img.ceo-widget {
 
 .main-footer__panel {
   width: min(100%, 1700px);
-  background: #090909;
+  background: #000;
 }
 
 .main-footer__inner {
@@ -2088,8 +2263,11 @@ img.ceo-widget {
   padding: 91px 128px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 308px;
-  overflow: hidden;
+  overflow: visible;
+  border-top: 1px solid rgba(255, 255, 255, 0.32);
+  background: #000;
 }
 
 .main-footer__column {
@@ -2097,6 +2275,7 @@ img.ceo-widget {
   flex-direction: column;
   align-items: flex-start;
   gap: 80px;
+  min-width: 0;
   color: #fff;
 }
 
@@ -2124,6 +2303,7 @@ img.ceo-widget {
 .main-footer__text p {
   margin: 0;
   max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .main-footer__small {
@@ -2131,7 +2311,9 @@ img.ceo-widget {
   font-size: 26px;
   font-weight: 400;
   line-height: 1.15;
-  white-space: nowrap;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .main-footer__link {

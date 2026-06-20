@@ -60,6 +60,9 @@
 .pricing-head,
 .pricing-card,
 .pricing-note,
+.product-story__top,
+.product-feature__title,
+.product-feature__note,
 .company-cases__head,
 .company-logo-card,
 .company-cases__button,
@@ -97,6 +100,18 @@
 
 .pricing-note {
   animation-delay: 520ms;
+}
+
+.product-story__top {
+  animation-delay: 80ms;
+}
+
+.product-feature__title {
+  animation-delay: 120ms;
+}
+
+.product-feature__note {
+  animation-delay: 220ms;
 }
 
 .company-cases__head {
