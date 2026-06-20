@@ -387,7 +387,7 @@
     min-height: auto;
     position: sticky;
     top: 92px;
-    transform: translateY(calc(76px - (var(--product-progress) * 176px)));
+    transform: none;
     opacity: 1;
   }
 

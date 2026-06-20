@@ -200,7 +200,17 @@ if (gameLevelButtons.length && gameIcons.length && gameStats.length) {
 const productFeatures = document.querySelectorAll('[data-product-feature]');
 
 if (productFeatures.length) {
+  const productMobileQuery = window.matchMedia('(max-width: 820px)');
+
   const updateProductProgress = () => {
+    if (productMobileQuery.matches) {
+      productFeatures.forEach((feature) => {
+        feature.style.setProperty('--product-progress', '1');
+        feature.classList.add('is-visible');
+      });
+      return;
+    }
+
     productFeatures.forEach((feature) => {
       const rect = feature.getBoundingClientRect();
       const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
@@ -220,4 +230,5 @@ if (productFeatures.length) {
   updateProductProgress();
   window.addEventListener('scroll', updateProductProgress, { passive: true });
   window.addEventListener('resize', updateProductProgress);
+  productMobileQuery.addEventListener('change', updateProductProgress);
 }
