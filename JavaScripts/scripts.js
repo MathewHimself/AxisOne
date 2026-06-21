@@ -198,37 +198,122 @@ if (gameLevelButtons.length && gameIcons.length && gameStats.length) {
 }
 
 const productFeatures = document.querySelectorAll('[data-product-feature]');
+const productStory = document.querySelector('.product-story');
 
-if (productFeatures.length) {
+if (productFeatures.length && productStory) {
   const productMobileQuery = window.matchMedia('(max-width: 820px)');
+  let productIndex = 0;
+  let productWheelDelta = 0;
+  let productLocked = false;
+  let productTouchStart = 0;
 
-  const updateProductProgress = () => {
-    if (productMobileQuery.matches) {
-      productFeatures.forEach((feature) => {
-        feature.style.setProperty('--product-progress', '1');
-        feature.classList.add('is-visible');
-      });
-      return;
-    }
-
+  const setProductPage = (nextIndex) => {
+    productIndex = Math.min(productFeatures.length - 1, Math.max(0, nextIndex));
     productFeatures.forEach((feature) => {
-      const rect = feature.getBoundingClientRect();
-      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-      const start = viewportHeight * 0.98;
-      const end = viewportHeight * 0.08;
-      const rawProgress = (start - rect.top) / (start - end);
-      const progress = Math.min(1, Math.max(0, rawProgress));
+      const index = Number(feature.dataset.productIndex);
 
-      feature.style.setProperty('--product-progress', progress.toFixed(3));
-
-      if (progress > 0.22) {
-        feature.classList.add('is-visible');
-      }
+      feature.classList.toggle('is-active', index === productIndex);
+      feature.classList.toggle('is-before', index < productIndex);
+      feature.classList.toggle('is-after', index > productIndex);
+      feature.classList.toggle('is-visible', index === productIndex);
+      feature.setAttribute('aria-hidden', String(index !== productIndex));
     });
   };
 
-  updateProductProgress();
-  window.addEventListener('scroll', updateProductProgress, { passive: true });
-  window.addEventListener('resize', updateProductProgress);
-  productMobileQuery.addEventListener('change', updateProductProgress);
+  productFeatures.forEach((feature, index) => {
+    feature.dataset.productIndex = String(index);
+  });
+
+  const isProductStoryInView = () => {
+    const rect = productStory.getBoundingClientRect();
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    return rect.top < viewportHeight * 0.24 && rect.bottom > viewportHeight * 0.76;
+  };
+
+  const flipProductPage = (direction) => {
+    const nextIndex = productIndex + direction;
+
+    if (nextIndex < 0 || nextIndex >= productFeatures.length || productLocked) {
+      return false;
+    }
+
+    productLocked = true;
+    productWheelDelta = 0;
+    setProductPage(nextIndex);
+
+    window.setTimeout(() => {
+      productLocked = false;
+    }, 1120);
+
+    return true;
+  };
+
+  productStory.addEventListener(
+    'wheel',
+    (event) => {
+      if (productMobileQuery.matches || !isProductStoryInView()) {
+        return;
+      }
+
+      const direction = event.deltaY > 0 ? 1 : -1;
+      const canFlip = productIndex + direction >= 0 && productIndex + direction < productFeatures.length;
+
+      if (!canFlip) {
+        return;
+      }
+
+      event.preventDefault();
+      productWheelDelta += event.deltaY;
+
+      if (Math.abs(productWheelDelta) < 42) {
+        return;
+      }
+
+      flipProductPage(direction);
+    },
+    { passive: false }
+  );
+
+  productStory.addEventListener(
+    'touchstart',
+    (event) => {
+      productTouchStart = event.touches[0]?.clientY || 0;
+    },
+    { passive: true }
+  );
+
+  productStory.addEventListener(
+    'touchmove',
+    (event) => {
+      if (productMobileQuery.matches || !productTouchStart) {
+        return;
+      }
+
+      const currentY = event.touches[0]?.clientY || productTouchStart;
+      const diff = productTouchStart - currentY;
+
+      if (Math.abs(diff) < 34) {
+        return;
+      }
+
+      const direction = diff > 0 ? 1 : -1;
+      const didFlip = flipProductPage(direction);
+
+      if (didFlip) {
+        event.preventDefault();
+      }
+
+      productTouchStart = 0;
+    },
+    { passive: false }
+  );
+
+  productMobileQuery.addEventListener('change', () => {
+    if (productMobileQuery.matches) {
+      setProductPage(0);
+    }
+  });
+
+  setProductPage(0);
 }
