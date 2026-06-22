@@ -310,3 +310,34 @@
     opacity: 1;
   }
 }
+
+.companies-title,
+.companies-carousel,
+.companies-button {
+  opacity: 0;
+  animation-name: fade-up;
+  animation-duration: 760ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+}
+
+.companies-title {
+  animation-delay: 120ms;
+}
+
+.companies-carousel {
+  animation-delay: 260ms;
+}
+
+.companies-button {
+  animation-delay: 420ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .companies-title,
+  .companies-carousel,
+  .companies-button {
+    animation: none;
+    opacity: 1;
+  }
+}

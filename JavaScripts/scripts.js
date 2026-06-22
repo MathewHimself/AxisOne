@@ -317,3 +317,168 @@ if (productFeatures.length && productStory) {
 
   setProductPage(0);
 }
+
+const companyCarousel = document.querySelector('[data-company-carousel]');
+const companyTrack = document.querySelector('[data-company-track]');
+const companyCases = document.querySelectorAll('[data-company-case]');
+
+if (companyCarousel && companyTrack && companyCases.length) {
+  const companyMobileQuery = window.matchMedia('(max-width: 900px)');
+  const companyCenterOrder = Math.floor(companyCases.length / 2);
+  let companyIndex = Number(companyCarousel.dataset.activeIndex) || 0;
+  let companyWheelDelta = 0;
+  let companyLocked = false;
+  let companyTouchStartX = 0;
+  let companyTouchStartY = 0;
+
+  const updateCompanyOffset = () => {
+    const active = companyCases[companyIndex];
+
+    if (!active) {
+      return;
+    }
+
+    if (companyMobileQuery.matches) {
+      const activeCenter = active.offsetTop + active.offsetHeight / 2;
+      const carouselCenter = companyCarousel.clientHeight / 2;
+      const offset = carouselCenter - activeCenter;
+      const leftOffset = (companyCarousel.clientWidth - companyTrack.offsetWidth) / 2;
+
+      companyTrack.style.setProperty('--companies-offset', `${Math.round(leftOffset)}px`);
+      companyTrack.style.setProperty('--companies-offset-y', `${Math.round(offset)}px`);
+      companyTrack.style.transform = 'none';
+      companyTrack.style.marginLeft = '0px';
+      companyTrack.style.marginTop = '0px';
+      companyTrack.style.left = `${Math.round(leftOffset)}px`;
+      companyTrack.style.top = `${Math.round(offset)}px`;
+      return;
+    }
+
+    const activeCenter = active.offsetLeft + active.offsetWidth / 2;
+    const carouselCenter = companyCarousel.clientWidth / 2;
+    const offset = carouselCenter - activeCenter;
+
+    companyTrack.style.setProperty('--companies-offset', `${Math.round(offset)}px`);
+    companyTrack.style.setProperty('--companies-offset-y', '0px');
+    companyTrack.style.transform = 'none';
+    companyTrack.style.marginLeft = '0px';
+    companyTrack.style.marginTop = '0px';
+    companyTrack.style.left = `${Math.round(offset)}px`;
+    companyTrack.style.top = '0px';
+  };
+
+  const setCompanyCase = (nextIndex) => {
+    companyIndex = (nextIndex + companyCases.length) % companyCases.length;
+
+    companyCases.forEach((caseElement, index) => {
+      const isActive = index === companyIndex;
+      const circularOrder =
+        (index - companyIndex + companyCenterOrder + companyCases.length) % companyCases.length;
+
+      caseElement.classList.toggle('is-active', isActive);
+      caseElement.classList.toggle('is-before', circularOrder < companyCenterOrder);
+      caseElement.classList.toggle('is-after', circularOrder > companyCenterOrder);
+      caseElement.style.order = String(circularOrder);
+      caseElement.setAttribute('aria-hidden', String(!isActive));
+    });
+
+    window.requestAnimationFrame(updateCompanyOffset);
+    window.setTimeout(updateCompanyOffset, 620);
+    window.setTimeout(updateCompanyOffset, 980);
+  };
+
+  const flipCompanyCase = (direction) => {
+    const nextIndex = companyIndex + direction;
+
+    if (companyLocked) {
+      return false;
+    }
+
+    companyLocked = true;
+    companyWheelDelta = 0;
+    setCompanyCase(nextIndex);
+
+    window.setTimeout(() => {
+      companyLocked = false;
+    }, 820);
+
+    return true;
+  };
+
+  companyCarousel.addEventListener(
+    'wheel',
+    (event) => {
+      const rawDelta =
+        Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
+      const direction = rawDelta > 0 ? 1 : -1;
+      const threshold = companyMobileQuery.matches ? 36 : 110;
+
+      if (companyLocked) {
+        event.preventDefault();
+        return;
+      }
+
+      event.preventDefault();
+      companyWheelDelta += rawDelta;
+
+      if (Math.abs(companyWheelDelta) < threshold) {
+        return;
+      }
+
+      flipCompanyCase(direction);
+    },
+    { passive: false }
+  );
+
+  companyCarousel.addEventListener(
+    'touchstart',
+    (event) => {
+      companyTouchStartX = event.touches[0]?.clientX || 0;
+      companyTouchStartY = event.touches[0]?.clientY || 0;
+    },
+    { passive: true }
+  );
+
+  companyCarousel.addEventListener(
+    'touchmove',
+    (event) => {
+      if (!companyTouchStartX && !companyTouchStartY) {
+        return;
+      }
+
+      const currentX = event.touches[0]?.clientX || companyTouchStartX;
+      const currentY = event.touches[0]?.clientY || companyTouchStartY;
+      const diffX = companyTouchStartX - currentX;
+      const diffY = companyTouchStartY - currentY;
+      const primaryDiff = companyMobileQuery.matches
+        ? diffY
+        : Math.abs(diffX) > Math.abs(diffY)
+          ? diffX
+          : diffY;
+
+      if (Math.abs(primaryDiff) < 34) {
+        return;
+      }
+
+      const didFlip = flipCompanyCase(primaryDiff > 0 ? 1 : -1);
+
+      if (didFlip) {
+        event.preventDefault();
+      }
+
+      companyTouchStartX = 0;
+      companyTouchStartY = 0;
+    },
+    { passive: false }
+  );
+
+  companyMobileQuery.addEventListener('change', () => {
+    setCompanyCase(companyIndex);
+  });
+
+  window.addEventListener('resize', updateCompanyOffset);
+
+  setCompanyCase(companyIndex);
+  window.setTimeout(updateCompanyOffset, 260);
+  window.setTimeout(() => setCompanyCase(companyIndex), 1400);
+}
