@@ -547,7 +547,7 @@ html:has(.product-body) {
 }
 
 .logo {
-  width: 212px;
+  width: 170px;
   aspect-ratio: 212 / 43;
   height: auto;
   display: block;
@@ -3142,21 +3142,21 @@ img.ceo-widget {
 .pricing-page {
   width: 100%;
   min-height: 100vh;
-  padding: 22px 80px 38px;
+  padding: 22px 80px 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 87px;
+  gap: 56px;
   overflow-x: hidden;
   background: #000;
 }
 
 .pricing-content {
-  width: min(100%, 1430px);
+  width: min(100%, 1120px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 45px;
+  gap: 30px;
 }
 
 .pricing-head {
@@ -3164,14 +3164,14 @@ img.ceo-widget {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 19px;
+  gap: 14px;
   text-align: center;
 }
 
 .pricing-title {
   width: 100%;
   color: #fff;
-  font-size: 65px;
+  font-size: 58px;
   font-weight: 700;
   line-height: 1;
   letter-spacing: -1.3px;
@@ -3180,7 +3180,7 @@ img.ceo-widget {
 .pricing-subtitle {
   width: 100%;
   color: #989898;
-  font-size: 26px;
+  font-size: 23px;
   font-weight: 400;
   line-height: 1.15;
 }
@@ -3188,19 +3188,19 @@ img.ceo-widget {
 .pricing-grid {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 456px);
+  grid-template-columns: repeat(3, 340px);
   justify-content: center;
-  gap: 38px;
+  gap: 26px;
 }
 
 .pricing-card {
   position: relative;
-  min-height: 700px;
-  padding: 85px 25px 48px;
+  min-height: 500px;
+  padding: 46px 18px 26px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 31px;
+  gap: 20px;
   overflow: hidden;
   border-radius: 20px;
   background: #171718;
@@ -3209,35 +3209,37 @@ img.ceo-widget {
 
 .pricing-card__head {
   width: min(100%, 408px);
+  min-height: 92px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  gap: 12px;
 }
 
 .pricing-card__head h2 {
   color: #fff;
-  font-size: 36px;
+  font-size: 31px;
   font-weight: 400;
   line-height: 1;
 }
 
 .pricing-card__head p {
   color: #fff;
-  font-size: 26px;
+  font-size: 19px;
   font-weight: 400;
   line-height: 1.15;
 }
 
 .pricing-price {
+  min-height: 76px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 17px;
+  gap: 10px;
 }
 
 .pricing-price__row {
-  min-height: 43px;
+  min-height: 36px;
   display: flex;
   align-items: flex-end;
   gap: 10px;
@@ -3247,16 +3249,16 @@ img.ceo-widget {
 .pricing-price__row strong {
   color: #fff;
   font-family: 'Inter', Arial, sans-serif;
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 400;
   line-height: 0.72;
-  letter-spacing: -1.2px;
+  letter-spacing: -1px;
 }
 
 .pricing-price__row span,
 .pricing-custom {
   color: #b9b9b9;
-  font-size: 26px;
+  font-size: 19px;
   font-weight: 400;
   line-height: 1.15;
 }
@@ -3268,13 +3270,13 @@ img.ceo-widget {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-size: 26px;
+  font-size: 19px;
   font-weight: 400;
   line-height: 1.15;
 }
 
 .pricing-price--enterprise {
-  gap: 17px;
+  gap: 10px;
 }
 
 .pricing-price--enterprise .pricing-price__row strong {
@@ -3283,43 +3285,55 @@ img.ceo-widget {
 
 .pricing-card__bottom {
   width: 100%;
+  margin-top: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 29px;
+  gap: 17px;
 }
 
 .pricing-action {
   width: 100%;
-  min-height: 54px;
-  padding: 12px 24px;
+  min-height: 50px;
+  padding: 11px 20px 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #fff;
-  border-radius: 50px;
+  border: 2px solid #fff;
+  border-radius: 30px;
   background: transparent;
-  color: #b9b9b9;
-  font-size: 26px;
+  color: #fff;
+  font-size: 19px;
   font-weight: 400;
-  line-height: 1.15;
+  line-height: 1;
+  text-align: center;
   white-space: nowrap;
   transition:
+    background-color 180ms ease,
     color 180ms ease,
     border-color 180ms ease,
     transform 180ms ease;
 }
 
-.pricing-action:hover {
-  border-color: #ff04c4;
-  color: #fff;
+.pricing-action:hover,
+.pricing-action:focus-visible {
+  border-color: #fff;
+  background: #fff;
+  color: #080808;
   transform: translateY(-1px);
+}
+
+.pricing-action:active {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.86);
+  color: #080808;
+  transform: translateY(0);
 }
 
 .pricing-features {
   display: flex;
   flex-direction: column;
-  gap: 13px;
+  gap: 9px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -3327,11 +3341,11 @@ img.ceo-widget {
 
 .pricing-features li {
   position: relative;
-  min-height: 24px;
-  padding-left: 35px;
+  min-height: 20px;
+  padding-left: 28px;
   color: #fff;
   font-family: 'Inter', Arial, sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.2;
   white-space: nowrap;
@@ -3343,7 +3357,7 @@ img.ceo-widget {
   top: 0;
   left: 0;
   color: #00d9c5;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1;
 }
 
@@ -3358,18 +3372,19 @@ img.ceo-widget {
 
 .pricing-badge {
   position: absolute;
-  top: 20px;
-  left: 25px;
-  min-height: 34px;
-  padding: 8px 30px;
+  top: 18px;
+  left: 18px;
+  max-width: calc(100% - 36px);
+  min-height: 28px;
+  padding: 6px 24px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 13px;
+  border-radius: 12px;
   background: linear-gradient(242deg, #fa003f 35.35%, #ff04c4 107.56%);
   color: #fff;
   font-family: 'Inter', Arial, sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1;
   white-space: nowrap;
@@ -3556,4 +3571,47 @@ img.ceo-widget {
 .companies-button:focus-visible {
   background-color: rgba(255, 255, 255, 0.12);
   transform: translateY(-1px);
+}
+
+.product-feature__button,
+.company-cases__button,
+.business-personalize__button,
+.ceo-thinking__button,
+.companies-button,
+.pricing-action {
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: none;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.product-feature__button:hover,
+.product-feature__button:focus-visible,
+.company-cases__button:hover,
+.company-cases__button:focus-visible,
+.business-personalize__button:hover,
+.business-personalize__button:focus-visible,
+.ceo-thinking__button:hover,
+.ceo-thinking__button:focus-visible,
+.companies-button:hover,
+.companies-button:focus-visible,
+.pricing-action:hover,
+.pricing-action:focus-visible {
+  border-color: #fff;
+  background: #fff;
+  color: #080808;
+  transform: translateY(-1px);
+}
+
+.pricing-action:active {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.86);
+  color: #080808;
+  transform: translateY(0);
 }
