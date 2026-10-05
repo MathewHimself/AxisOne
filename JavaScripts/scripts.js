@@ -41,6 +41,14 @@ if (emailForm && emailInput && emailButton) {
 }
 
 const ceoThinking = document.querySelector('.ceo-thinking');
+const ceoThinkingButton = document.querySelector('.ceo-thinking__button');
+
+if (ceoThinkingButton) {
+  ceoThinkingButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.location.assign('product.html');
+  });
+}
 
 if (ceoThinking) {
   const revealCeoThinking = () => {
